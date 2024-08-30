@@ -1,0 +1,46 @@
+{
+    "name": "nRFConnect-SDK",
+    "build": {
+            "_comment" : "Links to the dockerfile",
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                    "_comment": "The command called when opening the terminal",
+                "terminal.integrated.shell.linux": "nrfutil toolchain-manager launch /bin/bash -- /root/entry.sh",
+
+                    "_comment": "Path to the working directory for nRF Connect extension",
+                "nrf-connect.topdir": "/workdir",
+
+                    "_comment": "Path to the nRF Connect SDK",
+                "nrf-connect.toolchainManager.installDirectory": "/root/ncs",
+
+                    "_comment": "Program used to detect conneted devices",
+                "nrf-connect.deviceProvider": "nrfjprog"
+                },
+
+                    "_comment": "Extensions to be installed",
+                "extensions": [
+                    "nordic-semiconductor.nrf-connect-extension-pack",
+                    "ms-vscode.cpptools",
+                    "twxs.cmake",
+                    "mhutchie.git-graph",
+                    "geeebe.duplicate",
+                    "mcu-debug.debug-tracker-vscode",
+                    "marus25.cortex-debug",
+                    "ms-vscode.cmake-tools"
+                ]
+                }
+            },
+        "userEnvProbe": "loginInteractiveShell",
+
+            "_comment": "Mount the working folder...",
+        "workspaceMount": "source=${localWorkspaceFolder},target=/workdir/workspace,type=bind",
+
+            "_comment": "... to this path",
+        "workspaceFolder": "/workdir/workspace",
+
+            "_comment": "The privileged container will have access to the USB devices",
+        "runArgs": [ "--privileged" ] 
+}
