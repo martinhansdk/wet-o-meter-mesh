@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceFolder}",
+
+                "_comment": "The elf file to debug",
+            "executable": "${workspaceFolder}/Main/build/zephyr/zephyr.elf",
+
+            "name": "Cortex debug Main",
+            "request": "launch",
+            "type": "cortex-debug",
+
+                "_comment": "Run to main",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none",
+
+                "_comment": "Which type of debugger to use",
+            "servertype": "jlink",
+
+                "_comment": "Location of the debug server",
+            "serverpath": "/opt/SEGGER/JLink/JLinkGDBServerCLExe",
+
+                "_comment": "GDB path, we installed it in the Dockerfile",
+            "gdbPath": "gdb-multiarch",
+
+                "_comment": "The device to debug",
+            "device": "nRF52832_xxAA",
+
+                "_comment": "Path to the SVD file fo the device",
+            "svdFile": "/workdir/modules/hal/nordic/nrfx/mdk/nrf52832.svd"
+        }
+    ]
+}

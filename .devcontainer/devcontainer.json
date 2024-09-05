@@ -4,6 +4,7 @@
             "_comment" : "Links to the dockerfile",
         "dockerfile": "Dockerfile"
     },
+    "updateRemoteUserUID": true,
     "customizations": {
         "vscode": {
             "settings": {
@@ -29,7 +30,8 @@
                     "geeebe.duplicate",
                     "mcu-debug.debug-tracker-vscode",
                     "marus25.cortex-debug",
-                    "ms-vscode.cmake-tools"
+                    "ms-vscode.cmake-tools",
+                    "ms-python.python"
                 ]
                 }
             },
